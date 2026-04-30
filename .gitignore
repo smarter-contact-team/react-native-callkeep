@@ -8,6 +8,7 @@
 
 # Xcode
 #
+example/ios/.xcode.env.local
 build/
 *.pbxuser
 !default.pbxuser
