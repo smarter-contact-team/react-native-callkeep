@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/smarter-contact-team/react-native-callkeep/compare/v1.0.0...v1.0.1) (2026-10-27)
+
+
+### Bug Fixes
+
+* SC-21839 fall back to phone-account settings when EnableAccountPreferenceActivity is missing ([#3](https://github.com/smarter-contact-team/react-native-callkeep/issues/3)) ([e76d677](https://github.com/smarter-contact-team/react-native-callkeep/commit/e76d6771d1d10b0ef673c41f1820100a6a8b66ff))
+
 ## 1.0.0 (2026-04-30)
 
 
