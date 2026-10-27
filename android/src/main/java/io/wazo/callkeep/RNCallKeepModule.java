@@ -19,6 +19,7 @@ package io.wazo.callkeep;
 import com.facebook.react.bridge.LifecycleEventListener;
 import android.Manifest;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -1030,8 +1031,13 @@ public class RNCallKeepModule extends ReactContextBaseJavaModule implements Life
                 return;
             }
 
-            context.startActivity(intent);
-            return;
+            // Android 17 removed this activity on Samsung; fall back to the standard settings intent
+            try {
+                context.startActivity(intent);
+                return;
+            } catch (ActivityNotFoundException | SecurityException e) {
+                Log.w(TAG, "[RNCallKeepModule][openPhoneAccounts] EnableAccountPreferenceActivity unavailable, falling back", e);
+            }
         }
 
         openPhoneAccountSettings();
